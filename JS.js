@@ -56,14 +56,19 @@ for (let i = 11; i < 30; i+=2) {
     sumOdd += i;
 }
 console.log(sumOdd);    // for loop
-
-/*for (let i = 10; i < 30; i++) {
-    if (i % 2 !== 0) {
-       let sumOddNum = 0;
-        sumOddNum += i;
-    }
-    console.log(sumOddNum);
-}*/                           // am incercat asa, dar ceva nu scriu corect
+       
+        // the other method 
+const sumOddNum = () => {
+    let sum = 0;
+    for (let i = 10; i < 30; i++) {
+        if (i % 2 == 0) {
+            continue;
+        }  
+        sum +=i; 
+    } 
+    return sum;
+};   
+console.log(sumOddNum());                        
 
 
 // 8 -  the sum of numbers in an array of numbers
@@ -100,6 +105,8 @@ for (let i = 0; i < arrays.length; i++) {
 }
 console.log(maxim);   // for loop to print maxinum number
 
+let maxim1 = Math.max.apply(null, arrays);
+console.log(maxim1);
 
 // 12 - function that will return a Boolean specifying if a number is prime
 const isPrime = num => {
@@ -164,6 +171,8 @@ console.log(mergeTwoArrays);  //concatenate methode
 
 console.log(Array.from(new Set(arrays1.concat(arrays2)))); //not repeating the numbers
 
+const mergeTwoArrays1 = (array1, array2) => array1.concat(array2);
+console.log(mergeTwoArrays1([26, 5, 9, 4], [4, 8, 5, 6]));
 
 // 18 - Create a function that will receive two arrays of numbers as arguments and return an array composed of all the numbers that are either in the first array or second array but not in both
 const newArray = (arr1, arr2) => {
